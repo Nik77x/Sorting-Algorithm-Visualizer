@@ -54,5 +54,34 @@ namespace SortAlgorithmsVisualizer
                 graphics.FillRectangle(new System.Drawing.SolidBrush(System.Drawing.Color.White), i, MaxValue - ArrayToSort[i], 1, MaxValue);
             }
         }
+
+       int GetIntFromText(string text)
+        {
+            int value;
+
+            if ( int.TryParse(text, out value) )
+            {
+                return value;
+            }
+            else
+            {
+               StatusLabel.Text = "invalid value";
+                return 0;
+            }
+
+        }
+
+        private void StatusLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void StartBtn_Click(object sender, EventArgs e)
+        {
+            ISortEngine SortEngine = new BubbleSortEngine();
+            SortEngine.DoWork(ArrayToSort, graphics, panel1.Height);
+        }
     }
 }

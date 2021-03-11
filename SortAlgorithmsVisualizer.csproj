@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BubbleSortEngine.cs" />
+    <Compile Include="ISortEngine.cs" />
     <Compile Include="Sort Algorithm Visualizer.cs">
       <SubType>Form</SubType>
     </Compile>

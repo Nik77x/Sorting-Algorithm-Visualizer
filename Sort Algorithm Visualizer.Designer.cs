@@ -32,10 +32,14 @@ namespace SortAlgorithmsVisualizer
             this.ResetBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.StartBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.BarWidthTB = new System.Windows.Forms.TrackBar();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.BarWidthTB)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ResetBtn
@@ -75,50 +79,95 @@ namespace SortAlgorithmsVisualizer
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 5;
             // 
-            // materialRaisedButton1
+            // StartBtn
             // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialRaisedButton1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialRaisedButton1.Location = new System.Drawing.Point(413, 85);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(77, 31);
-            this.materialRaisedButton1.TabIndex = 6;
-            this.materialRaisedButton1.Text = "Start";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.StartBtn.AutoSize = true;
+            this.StartBtn.Depth = 0;
+            this.StartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartBtn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartBtn.Location = new System.Drawing.Point(651, 85);
+            this.StartBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.StartBtn.Name = "StartBtn";
+            this.StartBtn.Primary = true;
+            this.StartBtn.Size = new System.Drawing.Size(77, 31);
+            this.StartBtn.TabIndex = 6;
+            this.StartBtn.Text = "Start";
+            this.StartBtn.UseVisualStyleBackColor = true;
+            this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.Location = new System.Drawing.Point(24, 135);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(830, 288);
+            this.panel1.Size = new System.Drawing.Size(830, 338);
             this.panel1.TabIndex = 7;
             // 
-            // trackBar1
+            // BarWidthTB
             // 
-            this.trackBar1.Location = new System.Drawing.Point(515, 84);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.trackBar1.Size = new System.Drawing.Size(122, 45);
-            this.trackBar1.TabIndex = 8;
+            this.BarWidthTB.Location = new System.Drawing.Point(474, 84);
+            this.BarWidthTB.Minimum = 1;
+            this.BarWidthTB.Name = "BarWidthTB";
+            this.BarWidthTB.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BarWidthTB.Size = new System.Drawing.Size(122, 45);
+            this.BarWidthTB.TabIndex = 8;
+            this.BarWidthTB.Value = 1;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(386, 94);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(73, 19);
+            this.materialLabel2.TabIndex = 9;
+            this.materialLabel2.Text = "Bar Width";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 478);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.Size = new System.Drawing.Size(876, 22);
+            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(31, 17);
+            this.StatusLabel.Text = "Info";
+            this.StatusLabel.Click += new System.EventHandler(this.StatusLabel_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 450);
-            this.Controls.Add(this.trackBar1);
+            this.ClientSize = new System.Drawing.Size(876, 500);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.BarWidthTB);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.StartBtn);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.ResetBtn);
+            this.MinimumSize = new System.Drawing.Size(876, 500);
             this.Name = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BarWidthTB)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,9 +178,12 @@ namespace SortAlgorithmsVisualizer
         private MaterialSkin.Controls.MaterialRaisedButton ResetBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton StartBtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar BarWidthTB;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
     }
 }
 
